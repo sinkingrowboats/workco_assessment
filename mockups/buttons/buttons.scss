@@ -1,105 +1,143 @@
+/* buttons.scss: Styling for the various buttons */
+/* NOTE: I've noticed I've been using Chivo a lot.
+ * Consider moving to some super class to avoid repeated font-family declarations
+ */
+
 @import "../variables.scss";
 @import "../mixins.scss";
 
+/* ===================== Page display Styles. ===================== */
+/* These are irrelevant to the actual button styling CSS*/
 section {
-	margin: 50px 20px;
+    margin: 50px 20px;
 }
+/* ================================================================ */
 
+
+/* remove focus boxes around all buttons */
 button {
-	&:focus {
-		outline: 0;
-	}
+    &:focus {
+        outline: 0;
+    }
 }
 
+/* styling the primary button style */
 .btn-primary {
-	background-color: $app-blue;
-	text-transform: uppercase;
-	text-align: center;
-	color: white;
-	font-size: 14px;
-	font-family: $font-chivo;
-	width: 140px;
-	margin: 0;
-	padding: 0;
+    background-color: $app-blue;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    font-size: 13px;
+    font-family: $font-chivo;
+    width: 120px;
+    margin: 0;
+    padding: 0;
 
-	@include btnPrimary(40px);
+    @include btnPrimary(30px);
 
-	@include hoverActive($app-darkblue);
+    @include hoverActive($app-darkblue);
 
-	@include disabled();
+    @include disabled();
+
+    @media only screen and (min-width: $break-mobile) {
+        font-size: 14px;
+        width: 140px;
+        @include btnPrimary(40px);
+    }
+
 }
 
+/* styling the link buttoon style.
+ * NOTE: Consider changing the link from an <a> tag to... well anything else
+ */
 .btn-link {
-	color: $app-linkgrey;
-	font-family: $font-chivo;
-	font-size: 14px;
-	text-decoration: none;
+    color: $app-linkgrey;
+    font-family: $font-chivo;
+    font-size: 14px;
+    text-decoration: none;
 
-	&:hover, &:active {
-		&:not([disabled]) {
-			color: $app-linkblue;
-		}
-	}
+    /* text only changes color on hover/active when not disabled */
+    &:hover, &:active {
+        &:not([disabled]) {
+            color: $app-linkblue;
+        }
+    }
 
-	@include disabled();
+    @include disabled();
 }
 
+/*
+Whoops didn't notice I left this old code block in.
 .btn-secondary-right {
-	background-color: $color-background;
-	text-align: center;
-	width: 95px;
-	margin: 0;
-	padding: 0;
+    background-color: $color-background;
+    text-align: center;
+    width: 95px;
+    margin: 0;
+    padding: 0;
 
-	@include btnSecondaryRight(40px);
+    @include btnSecondaryRight(40px);
 }
 
 .btn-secondary-left {
-	background-color: $color-background;
-	text-align: center;
-	width: 95px;
-	margin: 0;
-	padding: 0;
+    background-color: $color-background;
+    text-align: center;
+    width: 95px;
+    margin: 0;
+    padding: 0;
 
-	@include btnSecondaryLeft(40px);
+    @include btnSecondaryLeft(40px);
 }
+*/
 
+
+/* Styling the Add/Subtract secondary buttons */
+/* The styling somewhat relies on the container div that contains the buttons
+ */
+
+ /* Styling the container div for the Add/subtract buttons. */
 .add-subtract {
-	width: 285px;
-	//@include pillStyle(40px);
-	//border: solid $color-background 1px;
+    width: 285px;
+    //@include pillStyle(40px);
+    //border: solid $color-background 1px;
 }
 
+/* placeholder selector for styles shared by both left and right secondary buttons */
 %btn-secondary {
-	background-color: $color-background;
-	width: 95px;
+    background-color: $color-background;
+    width: 95px;
 
-	@include hoverActive($app-blue);
+    @include hoverActive($app-blue);
 
-	@include disabled();
+    @include disabled();
 }
 
+/* left secondary button stylings. extends %btn-secondary and adds all left specific styles */
 .btn-secondary-left{
-	@extend %btn-secondary;
-	@include btnSecondaryLeft(40px);
-	float: left;
+    @extend %btn-secondary;
+    @include btnSecondaryLeft(40px);
+    float: left;
 }
 
+/* right secondary button stylings. extends %btn-secondary and adds all right specific styles */
 .btn-secondary-right{
-	@extend %btn-secondary;
-	@include btnSecondaryRight(40px);
-	float: right;
+    @extend %btn-secondary;
+    @include btnSecondaryRight(40px);
+    float: right;
 }
 
+/* styling the item count div */
 .item-count {
-	text-align: center;
-	width: 95px;
-	height: 38px;
-	background-color: white;
-	float: left;
-	line-height: 38px;
-	border-style: solid none solid none;
-	border-color: $color-background;
-	border-width: 1px;
+    text-align: center;
+    width: 95px;
+    height: 38px;   /* total height of the container div and buttons are,
+                     * the border on top and bottom of the item-count div are each 1px, so
+                     * height of the count div must be 38 px to display perfectly inline with side buttons
+                     */
+    background-color: white;
+    float: left;
+    line-height: 38px; /* line height same as div height to require text to display at vertical center */
+    border-style: solid none solid none;
+    border-color: $color-background;
+    border-width: 1px;
 }
 
