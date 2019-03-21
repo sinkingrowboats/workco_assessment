@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../fonts.css">
+        <link rel="stylesheet" href="buttons.css">
+        <title>Button Samples</title>
+    </head>
+    <body>
+        <div id="root">
+            <section>
+                <button class="btn-primary">Add to cart</button>
+                <button class="btn-primary" disabled>Add to cart</button>
+            </section>
+            <section>
+                <a class="btn-link" href="#">
+                    Your cart is empty
+                </a>
+                <a class="btn-link" href="#" disabled>Your cart is empty</a>
+            </section>
+            <section>
+                <!-- <button class="btn-secondary-right">+</button>
+                <button class="btn-secondary-left">-</button> -->
+
+                <div class="add-subtract">
+                    <button class="btn-secondary-left"></button><!--
+                 --><div class="item-count">110</div><!--
+                 --><button class="btn-secondary-right" disabled></button>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

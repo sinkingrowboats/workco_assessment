@@ -1,0 +1,44 @@
+@mixin pillStyle($height) {
+	height: $height;
+	border-radius: ($height / 2);
+}
+
+@mixin btnPrimary($height) {
+	@include pillStyle($height);
+	border: none;
+}
+
+@mixin btnSecondaryRight($height) {
+	height: $height;
+	border-radius: 0px ($height / 2) ($height / 2) 0px;
+	border: none;
+}
+
+@mixin btnSecondaryLeft($height) {
+	height: $height;
+	border-radius: ($height / 2) 0px 0px ($height / 2);
+	border: none;
+}
+
+@mixin disabled($opacity: 0.3) {
+	&[disabled] {
+		opacity: $opacity;
+	}
+}
+
+@mixin hoverActive($color) {
+	&:hover, &:active {
+		&:not([disabled]) {
+			background-color: $color;
+		}
+	}
+}
+
+/*
+@mixin backImage($image) {
+	background: url($image);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+*/
