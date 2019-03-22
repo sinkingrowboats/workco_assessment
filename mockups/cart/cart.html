@@ -5,11 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../fonts.css">
         <link rel="stylesheet" href="cart.css">
-        <title>Cart Mockup</title>
+        <title>Cart Mockup </title>
     </head>
     <body>
         <div id="root">
 	        <div id="main">
+	        	<!-- I added a lot of lorem ipsum so the content in main would overflow the height of the viewport
+	        		 like it most likely would on the store page to ensure that I properly disabled the scroll
+	        		 for the store layer beneath the cart overlay -->
 	        	<p>Lorem ipsum dolor sit amet, rebum legimus ancillae ad pro, eos at dicam aliquam facilis, sonet feugiat ex ius. Mea verear constituam cotidieque ad, cu discere oporteat definitiones duo. Ius no omittam mediocrem, et tollit feugiat vis. Tempor elaboraret ius et. Iracundia posidonium vim no.</p>
 
 				<p>Mei invenire incorrupte cu, lobortis gloriatur at eos, ea nec rebum modus verterem. Eum ex noluisse sapientem dissentiunt, nec ferri soluta mandamus ea. Stet impetus in vis, falli recusabo cu mel. Doctus dissentias id quo, eum et cetero veritus. Eum ea aperiri luptatum.</p>
@@ -51,6 +54,176 @@
 				<p>Ad sea voluptua lucilius assentior. Cibo vocibus sit et. Falli essent aeterno qui id. Probo postulant salutatus duo ea. Phaedrum postulant deseruisse has ex, mel ei apeirian sensibus dissentias. Ne virtute lobortis qui, labitur deseruisse te pro, agam indoctum id est. Alii tale an mea.</p>
 	        </div>
 	        <div id="cart-overlay">
+	        	<div class="cart-root">
+	        		<div class="close-cart">
+	        			<img src="../assets/images/x-close.svg">
+	        		</div>
+	        		<div class="cart-main">
+		        		<h3 class="cart-heading">Your Cart</h3>
+		        		<hr>
+		        		<div class="cart-product">
+		        			<div class="cart-product-image" style="background-image: url('../assets/images/chronograph.png')">
+		        			</div>
+		        			<div class="cart-product-info">
+		        				<h4>Chronograph</h4>
+		        				<p>$500.01</p>
+		        				<a href="#">Remove</a>
+		        			</div>
+		        		</div>
+		        		<div class="add-subtract">
+		                    <button class="btn-secondary-left">
+		                        <svg width="16px" height="2px" viewBox="0 0 16 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		                            <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+		                            <title>Line 2</title>
+		                            <desc>Created with Sketch.</desc>
+		                            <g id="v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+		                                <g id="Desktop-Copy" transform="translate(-401.000000, -651.000000)" stroke="#8E939C" stroke-width="2">
+		                                    <g id="Group-2" transform="translate(361.000000, 632.000000)">
+		                                        <path d="M41,20 L55,20" id="Line-2"></path>
+		                                    </g>
+		                                </g>
+		                            </g>
+		                        </svg>
+		                    </button><!--
+		                 --><div class="item-count">110</div><!--
+		                 --><button class="btn-secondary-right">
+		                        <svg width="14px" height="13px" viewBox="0 0 14 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		                            <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+		                            <title>Combined Shape</title>
+		                            <desc>Created with Sketch.</desc>
+		                            <g id="v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+		                                <g id="Mobile-Copy-4" transform="translate(-248.000000, -234.000000)" stroke="#8E939C" stroke-width="2">
+		                                    <g id="Amount-Picker" transform="translate(17.000000, 220.000000)">
+		                                        <g id="Add-btn" transform="translate(191.000000, 0.000000)">
+		                                            <g id="Add" transform="translate(40.000000, 14.000000)">
+		                                                <path d="M7,6.5 L0.333333333,6.5 L7,6.5 L7,0 L7,6.5 Z M7,6.5 L13.6833229,6.5 L7,6.5 L7,13 L7,6.5 Z" id="Combined-Shape"></path>
+		                                            </g>
+		                                        </g>
+		                                    </g>
+		                                </g>
+		                            </g>
+		                        </svg>
+		                    </button>
+		                </div>
+
+
+
+
+
+		                <div class="cart-product">
+		        			<div class="cart-product-image" style="background-image: url('../assets/images/quartz.png')">
+		        			</div>
+		        			<div class="cart-product-info">
+		        				<h4>Quartz</h4>
+		        				<p>$10.99</p>
+		        				<a href="#">Remove</a>
+		        			</div>
+		        		</div>
+		        		<div class="add-subtract">
+		                    <button class="btn-secondary-left">
+		                        <svg width="16px" height="2px" viewBox="0 0 16 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		                            <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+		                            <title>Line 2</title>
+		                            <desc>Created with Sketch.</desc>
+		                            <g id="v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+		                                <g id="Desktop-Copy" transform="translate(-401.000000, -651.000000)" stroke="#8E939C" stroke-width="2">
+		                                    <g id="Group-2" transform="translate(361.000000, 632.000000)">
+		                                        <path d="M41,20 L55,20" id="Line-2"></path>
+		                                    </g>
+		                                </g>
+		                            </g>
+		                        </svg>
+		                    </button><!--
+		                 --><div class="item-count">110</div><!--
+		                 --><button class="btn-secondary-right">
+		                        <svg width="14px" height="13px" viewBox="0 0 14 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		                            <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+		                            <title>Combined Shape</title>
+		                            <desc>Created with Sketch.</desc>
+		                            <g id="v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+		                                <g id="Mobile-Copy-4" transform="translate(-248.000000, -234.000000)" stroke="#8E939C" stroke-width="2">
+		                                    <g id="Amount-Picker" transform="translate(17.000000, 220.000000)">
+		                                        <g id="Add-btn" transform="translate(191.000000, 0.000000)">
+		                                            <g id="Add" transform="translate(40.000000, 14.000000)">
+		                                                <path d="M7,6.5 L0.333333333,6.5 L7,6.5 L7,0 L7,6.5 Z M7,6.5 L13.6833229,6.5 L7,6.5 L7,13 L7,6.5 Z" id="Combined-Shape"></path>
+		                                            </g>
+		                                        </g>
+		                                    </g>
+		                                </g>
+		                            </g>
+		                        </svg>
+		                    </button>
+		                </div>
+
+
+
+
+
+		                <div class="cart-product">
+		        			<div class="cart-product-image" style="background-image: url('../assets/images/weekender.png')">
+		        			</div>
+		        			<div class="cart-product-info">
+		        				<h4>Weekender</h4>
+		        				<p>$19.99</p>
+		        				<a href="#">Remove</a>
+		        			</div>
+		        		</div>
+		        		<div class="add-subtract">
+		                    <button class="btn-secondary-left">
+		                        <svg width="16px" height="2px" viewBox="0 0 16 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		                            <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+		                            <title>Line 2</title>
+		                            <desc>Created with Sketch.</desc>
+		                            <g id="v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+		                                <g id="Desktop-Copy" transform="translate(-401.000000, -651.000000)" stroke="#8E939C" stroke-width="2">
+		                                    <g id="Group-2" transform="translate(361.000000, 632.000000)">
+		                                        <path d="M41,20 L55,20" id="Line-2"></path>
+		                                    </g>
+		                                </g>
+		                            </g>
+		                        </svg>
+		                    </button><!--
+		                 --><div class="item-count">110</div><!--
+		                 --><button class="btn-secondary-right">
+		                        <svg width="14px" height="13px" viewBox="0 0 14 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		                            <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+		                            <title>Combined Shape</title>
+		                            <desc>Created with Sketch.</desc>
+		                            <g id="v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+		                                <g id="Mobile-Copy-4" transform="translate(-248.000000, -234.000000)" stroke="#8E939C" stroke-width="2">
+		                                    <g id="Amount-Picker" transform="translate(17.000000, 220.000000)">
+		                                        <g id="Add-btn" transform="translate(191.000000, 0.000000)">
+		                                            <g id="Add" transform="translate(40.000000, 14.000000)">
+		                                                <path d="M7,6.5 L0.333333333,6.5 L7,6.5 L7,0 L7,6.5 Z M7,6.5 L13.6833229,6.5 L7,6.5 L7,13 L7,6.5 Z" id="Combined-Shape"></path>
+		                                            </g>
+		                                        </g>
+		                                    </g>
+		                                </g>
+		                            </g>
+		                        </svg>
+		                    </button>
+		                </div>
+
+
+
+		        		<hr>
+		        		<div class="receipt-item">
+		        			<span class="receipt-item-name">Subtotal</span>
+		        			<span class="receipt-item-price">$500.01</span>
+		        		</div>
+		        		<div class="receipt-item">
+		        			<span class="receipt-item-name">Taxes</span>
+		        			<span class="receipt-item-price">$40.34</span>
+		        		</div>
+		        		<hr>
+		        		<div class="receipt-item">
+		        			<span class="receipt-item-name">Total</span>
+		        			<span class="receipt-item-price">$540.35</span>
+		        		</div>
+		        		<button class="update-btn">Update</button>
+		        	</div>
+	        		<button class="checkout-btn">Checkout</button>
+	        	</div>
 	        </div>
 	    </div>
     </body>

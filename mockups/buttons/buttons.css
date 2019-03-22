@@ -6,30 +6,41 @@
 /* MIXIN: give primary button style. This is just pill style
  * but, specifies no border. Mostly just exists for ease of code resuse
  */
-/* Apply pill button stle to only left or right sides as specified for the 
+/* MIXIN: Apply pill button stle to only left or right sides as specified for the 
  * secondary button styles in the sketch file
  */
-/* Lower the opacity to indicate an element is disabled*/
-/* Change background-color on hover, but only when element is not disabled */
-/*
-This mixin normally comes in handy for me so I'm just keeping it around 
-@mixin backImage($image) {
-    background: url($image);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-}
-*/
+/* MIXIN: Lower the opacity to indicate an element is disabled*/
+/* MIXIN: Change background-color on hover, but only when element is not disabled */
+/* General body styles. These should not need to be changed
+ * for any reason by the application
+ */
+body {
+  background-color: #F5F5F5;
+  font-family: Chivo, sans-serif;
+  font-weight: normal;
+  margin: 0; }
+
+h1, h2, h3, h4, h5, h6, p {
+  font-weight: normal;
+  margin: 0px;
+  padding: 0px; }
+
+/* remove focus boxes around all buttons */
+button {
+  cursor: pointer;
+  font-family: Chivo, sans-serif; }
+  button:focus {
+    outline: 0; }
+
 /* ===================== Page display Styles. ===================== */
 /* These are irrelevant to the actual button styling CSS*/
 section {
   margin: 50px 20px; }
 
-/* ================================================================ */
-/* remove focus boxes around all buttons */
-button:focus {
-  outline: 0; }
+body {
+  background-color: white; }
 
+/* ================================================================ */
 /* styling the primary button style */
 .btn-primary {
   background-color: #5E97D1;
@@ -70,44 +81,30 @@ button:focus {
   .btn-link[disabled] {
     opacity: 0.3; }
 
-/*
-Whoops didn't notice I left this old code block in.
-.btn-secondary-right {
-    background-color: $color-background;
-    text-align: center;
-    width: 95px;
-    margin: 0;
-    padding: 0;
-
-    @include btnSecondaryRight(40px);
-}
-
-.btn-secondary-left {
-    background-color: $color-background;
-    text-align: center;
-    width: 95px;
-    margin: 0;
-    padding: 0;
-
-    @include btnSecondaryLeft(40px);
-}
-*/
 /* Styling the Add/Subtract secondary buttons */
 /* The styling somewhat relies on the container div that contains the buttons
  */
 /* Styling the container div for the Add/subtract buttons. */
 .add-subtract {
-  width: 285px; }
+  width: 100%; }
 
 /* placeholder selector for styles shared by both left and right secondary buttons */
 .btn-secondary-left, .btn-secondary-right {
+  text-align: center;
   vertical-align: top;
   background-color: #F5F5F5;
-  width: 95px; }
+  width: 33%; }
   .btn-secondary-left:hover:not([disabled]), .btn-secondary-right:hover:not([disabled]), .btn-secondary-left:active:not([disabled]), .btn-secondary-right:active:not([disabled]) {
     background-color: #5E97D1; }
   [disabled].btn-secondary-left, [disabled].btn-secondary-right {
     opacity: 0.3; }
+  .btn-secondary-left svg, .btn-secondary-right svg {
+    vertical-align: middle; }
+  .btn-secondary-left svg, .btn-secondary-right svg {
+    fill: white; }
+  .btn-secondary-left:hover:not([disabled]) svg path, .btn-secondary-right:hover:not([disabled]) svg path, .btn-secondary-left:active:not([disabled]) svg path, .btn-secondary-right:active:not([disabled]) svg path {
+    fill: white;
+    stroke: white; }
 
 /* left secondary button stylings. extends %btn-secondary and adds all left specific styles */
 .btn-secondary-left {
@@ -115,6 +112,8 @@ Whoops didn't notice I left this old code block in.
   border-radius: 20px 0px 0px 20px;
   border: none;
   float: left; }
+  .btn-secondary-left g {
+    fill: white; }
 
 /* right secondary button stylings. extends %btn-secondary and adds all right specific styles */
 .btn-secondary-right {
@@ -127,7 +126,7 @@ Whoops didn't notice I left this old code block in.
 .item-count {
   vertical-align: top;
   text-align: center;
-  width: 95px;
+  width: 34%;
   height: 38px;
   /* total height of the container div and buttons are,
    * the border on top and bottom of the item-count div are each 1px, so

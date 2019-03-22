@@ -2,17 +2,18 @@
 /* MIXIN: give primary button style. This is just pill style
  * but, specifies no border. Mostly just exists for ease of code resuse
  */
-/* Apply pill button stle to only left or right sides as specified for the 
+/* MIXIN: Apply pill button stle to only left or right sides as specified for the 
  * secondary button styles in the sketch file
  */
-/* Lower the opacity to indicate an element is disabled*/
-/* Change background-color on hover, but only when element is not disabled */
+/* MIXIN: Lower the opacity to indicate an element is disabled*/
+/* MIXIN: Change background-color on hover, but only when element is not disabled */
 /* General body styles. These should not need to be changed
  * for any reason by the application
  */
 body {
   background-color: #F5F5F5;
   font-family: Chivo, sans-serif;
+  font-weight: normal;
   margin: 0; }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -21,8 +22,11 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 0px; }
 
 /* remove focus boxes around all buttons */
-button:focus {
-  outline: 0; }
+button {
+  cursor: pointer;
+  font-family: Chivo, sans-serif; }
+  button:focus {
+    outline: 0; }
 
 /* buttons.scss: Styling for the various buttons */
 /* NOTE: I've noticed I've been using Chivo a lot.
@@ -151,11 +155,11 @@ section {
         font-size: 51px; } }
 
 /* Display the cart link button on the right side of the header */
-.cart-container {
+.cart-link-container {
   height: 17px;
   line-height: 17px; }
   @media only screen and (min-width: 768px) {
-    .cart-container {
+    .cart-link-container {
       float: right;
       height: 44px;
       line-height: 44px; } }
@@ -164,8 +168,8 @@ section {
 .content-divider {
   border: 0;
   height: 1px;
-  color: #DADADA;
-  background-color: #DADADA;
+  color: #D8D8D8;
+  background-color: #D8D8D8;
   margin: 21px 0px; }
   @media only screen and (min-width: 768px) {
     .content-divider {

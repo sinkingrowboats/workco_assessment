@@ -14,7 +14,7 @@
 }
 
 
-/* Apply pill button stle to only left or right sides as specified for the 
+/* MIXIN: Apply pill button stle to only left or right sides as specified for the 
  * secondary button styles in the sketch file
  */
 @mixin btnSecondaryRight($height) {
@@ -30,14 +30,14 @@
 }
 
 
-/* Lower the opacity to indicate an element is disabled*/
+/* MIXIN: Lower the opacity to indicate an element is disabled*/
 @mixin disabled($opacity: 0.3) {
     &[disabled] {
         opacity: $opacity;
     }
 }
 
-/* Change background-color on hover, but only when element is not disabled */
+/* MIXIN: Change background-color on hover, but only when element is not disabled */
 @mixin hoverActive($color) {
     &:hover, &:active {
         &:not([disabled]) {
@@ -46,13 +46,29 @@
     }
 }
 
+/* MIXIN: Standard Styling for div background images. Exists seperately from
+ * the backImage mixin so background image url can be specified in the html
+ * properties
+ */
 @mixin backImageStyling() {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
-
+/* MIXIN: Standard Styling for div background images. Gives the div the background-image
+ * specified by the path '$image'
+ */
 @mixin backImage($image) {
     @include backImageStyling;
     background: url($image);
+}
+
+/* MIXIN: Standard thin horizontal rule stylings. Gives the rule the color specified by
+ * $line-color
+ */
+@mixin hrStandard($line-color: black) {
+    border: 0;
+    height: 1px;
+    color: $line-color;
+    background-color: $line-color;
 }

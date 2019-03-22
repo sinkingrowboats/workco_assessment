@@ -1,3 +1,12 @@
+/* fonts.css: contains import definitions for the fontfaces used in the project.
+ * NOTE: The Chivo font file I downloaded from the internet doesn't at all match the one
+ * in the wireframes, so I've been using the 'Chivo Light' font file as the 'Chivo Regular'
+ * font within the project because it matches better and doesn't hurt my eyes and soul.
+ * The problem is the actual 'Chivo Light' font is used in the wireframes, so Light and Regular
+ * aren't differentiated within the project. I should probably just ask for the text files used
+ * in the wireframes.
+ */
+
 @font-face {
 	font-family: 'Chivo';
 	src: url('assets/fonts/chivo/chivo_light.ttf');

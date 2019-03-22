@@ -12,6 +12,10 @@
 section {
     margin: 50px 20px;
 }
+
+body {
+    background-color: white;
+}
 /* ================================================================ */
 
 /* styling the primary button style */
@@ -67,47 +71,69 @@ section {
 
  /* Styling the container div for the Add/subtract buttons. */
 .add-subtract {
-    width: 285px;
+    width: 100%;
     //@include pillStyle(40px);
     //border: solid $color-background 1px;
 }
 
 /* placeholder selector for styles shared by both left and right secondary buttons */
 %btn-secondary {
+    text-align: center;
     vertical-align: top;
     background-color: $color-background;
-    width: 95px;
+    width: 33%;
+    display: inline-block;
 
     @include hoverActive($app-blue);
 
     @include disabled();
+
+    svg {
+        vertical-align: middle;
+    }
+
+    svg {
+        fill: white;
+    }
+
+    &:hover, &:active {
+        &:not([disabled]) {
+
+            svg path {
+                fill: white;
+                stroke: white;
+            }
+        }
+    }
 }
 
 /* left secondary button stylings. extends %btn-secondary and adds all left specific styles */
 .btn-secondary-left{
     @extend %btn-secondary;
     @include btnSecondaryLeft(40px);
-    float: left;
+
+    g {
+        fill: white;
+    }
 }
 
 /* right secondary button stylings. extends %btn-secondary and adds all right specific styles */
 .btn-secondary-right{
     @extend %btn-secondary;
     @include btnSecondaryRight(40px);
-    float: right;
 }
 
 /* styling the item count div */
 .item-count {
+    display: inline-block;
     vertical-align: top;
     text-align: center;
-    width: 95px;
+    width: 34%;
     height: 38px;   /* total height of the container div and buttons are,
                      * the border on top and bottom of the item-count div are each 1px, so
                      * height of the count div must be 38 px to display perfectly inline with side buttons
                      */
     background-color: white;
-    float: left;
     line-height: 38px; /* line height same as div height to require text to display at vertical center */
     border-style: solid none solid none;
     border-color: $color-background;

@@ -40,7 +40,7 @@
 }
 
 /* Display the cart link button on the right side of the header */
-.cart-container {
+.cart-link-container {
 	height: 17px;
 	line-height: 17px;
 
@@ -53,10 +53,7 @@
 
 /* Styling the hr tag that divides the heading from the store content */
 .content-divider { 
-	border: 0;
-	height: 1px;
-	color: #DADADA;
-	background-color: #DADADA;
+	@include hrStandard($app-linegrey);
 	margin: $margin-mobile 0px;
 
 	@media only screen and (min-width: $break-mobile) {
