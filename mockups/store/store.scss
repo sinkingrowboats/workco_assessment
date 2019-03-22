@@ -1,21 +1,7 @@
 @import "../variables.scss"; 
 @import "../mixins.scss";
+@import "../base.scss";
 @import "../buttons/buttons.scss";
-
-/* General body styles. These should not need to be changed
- * for any reason by the application
- */
-body {
-	background-color: $color-background;
-	font-family: $font-chivo;
-	margin: 0;
-}
-
-h1, h2, h3, h4, h5, h6, p{
-	font-weight: normal;
-	margin: 0px;
-	padding: 0px;
-}
 
 #main {
 	margin: 20px 18px 0px 18px;
@@ -66,7 +52,7 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 /* Styling the hr tag that divides the heading from the store content */
-hr {
+.content-divider { 
 	border: 0;
 	height: 1px;
 	color: #DADADA;
