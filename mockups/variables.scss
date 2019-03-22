@@ -1,10 +1,19 @@
-$color-background:	#F5F5F5;
-$app-blue:			#5E97D1;
-$app-darkblue: 		#407FC0;
-$app-linkblue:		#407FC0;
-$app-linkgrey:		#292929;
+$color-background:  #F5F5F5;
+$app-blue:          #5E97D1;
+$app-darkblue:      #407FC0;
+$app-linkblue:      #407FC0;
+$app-linkgrey:      #292929;
+$app-remaininggrey: #9B9B9B;
 
 $font-chivo: Chivo, sans-serif;
-$font-helvetiva-neue: 'Helvetica Neue', sans-serif;
+$font-helvetica-neue: 'Helvetica Neue', sans-serif;
 
-$disabled-opacity:	0.3;
+$disabled-opacity:  0.3;
+
+$break-mobile: 768px; 
+$break-tablet: 1280px; //TODO: I prefer the 1024 desktop breakpoint, but I'll follow the sketch wireframe !!! CHANGE BEFORE COMITTING FINAL VERSION !!!
+$margin-mobile: 21px;
+$margin-tablet: 25px;
+$margin-desktop: 30px;
+$product-height: 358px;
+$image-height-mobile: 206px;

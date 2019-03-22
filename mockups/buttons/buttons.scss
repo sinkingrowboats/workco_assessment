@@ -3,8 +3,8 @@
  * Consider moving to some super class to avoid repeated font-family declarations
  */
 
-@import "../variables.scss";
-@import "../mixins.scss";
+//@import "../variables.scss";
+//@import "../mixins.scss";
 
 /* ===================== Page display Styles. ===================== */
 /* These are irrelevant to the actual button styling CSS*/
@@ -47,9 +47,7 @@ button {
 
 }
 
-/* styling the link buttoon style.
- * NOTE: Consider changing the link from an <a> tag to... well anything else
- */
+/* styling the link button style. */
 .btn-link {
     color: $app-linkgrey;
     font-family: $font-chivo;
@@ -60,6 +58,10 @@ button {
     &:hover, &:active {
         &:not([disabled]) {
             color: $app-linkblue;
+
+            svg path {
+                fill: $app-blue;
+            }
         }
     }
 
@@ -103,6 +105,7 @@ Whoops didn't notice I left this old code block in.
 
 /* placeholder selector for styles shared by both left and right secondary buttons */
 %btn-secondary {
+    vertical-align: top;
     background-color: $color-background;
     width: 95px;
 
@@ -127,6 +130,7 @@ Whoops didn't notice I left this old code block in.
 
 /* styling the item count div */
 .item-count {
+    vertical-align: top;
     text-align: center;
     width: 95px;
     height: 38px;   /* total height of the container div and buttons are,

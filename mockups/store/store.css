@@ -1,28 +1,318 @@
+/* MIXIN: display div with pill style */
+/* MIXIN: give primary button style. This is just pill style
+ * but, specifies no border. Mostly just exists for ease of code resuse
+ */
+/* Apply pill button stle to only left or right sides as specified for the 
+ * secondary button styles in the sketch file
+ */
+/* Lower the opacity to indicate an element is disabled*/
+/* Change background-color on hover, but only when element is not disabled */
+/* buttons.scss: Styling for the various buttons */
+/* NOTE: I've noticed I've been using Chivo a lot.
+ * Consider moving to some super class to avoid repeated font-family declarations
+ */
+/* ===================== Page display Styles. ===================== */
+/* These are irrelevant to the actual button styling CSS*/
+section {
+  margin: 50px 20px; }
+
+/* ================================================================ */
+/* remove focus boxes around all buttons */
+button:focus {
+  outline: 0; }
+
+/* styling the primary button style */
+.btn-primary {
+  background-color: #5E97D1;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  font-family: Chivo, sans-serif;
+  width: 120px;
+  margin: 0;
+  padding: 0;
+  height: 30px;
+  border-radius: 15px;
+  border: none; }
+  .btn-primary:hover:not([disabled]), .btn-primary:active:not([disabled]) {
+    background-color: #407FC0; }
+  .btn-primary[disabled] {
+    opacity: 0.3; }
+  @media only screen and (min-width: 768px) {
+    .btn-primary {
+      font-size: 14px;
+      width: 140px;
+      height: 40px;
+      border-radius: 20px;
+      border: none; } }
+
+/* styling the link button style. */
+.btn-link {
+  color: #292929;
+  font-family: Chivo, sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  /* text only changes color on hover/active when not disabled */ }
+  .btn-link:hover:not([disabled]), .btn-link:active:not([disabled]) {
+    color: #407FC0; }
+    .btn-link:hover:not([disabled]) svg path, .btn-link:active:not([disabled]) svg path {
+      fill: #5E97D1; }
+  .btn-link[disabled] {
+    opacity: 0.3; }
+
+/*
+Whoops didn't notice I left this old code block in.
+.btn-secondary-right {
+    background-color: $color-background;
+    text-align: center;
+    width: 95px;
+    margin: 0;
+    padding: 0;
+
+    @include btnSecondaryRight(40px);
+}
+
+.btn-secondary-left {
+    background-color: $color-background;
+    text-align: center;
+    width: 95px;
+    margin: 0;
+    padding: 0;
+
+    @include btnSecondaryLeft(40px);
+}
+*/
+/* Styling the Add/Subtract secondary buttons */
+/* The styling somewhat relies on the container div that contains the buttons
+ */
+/* Styling the container div for the Add/subtract buttons. */
+.add-subtract {
+  width: 285px; }
+
+/* placeholder selector for styles shared by both left and right secondary buttons */
+.btn-secondary-left, .btn-secondary-right {
+  vertical-align: top;
+  background-color: #F5F5F5;
+  width: 95px; }
+  .btn-secondary-left:hover:not([disabled]), .btn-secondary-right:hover:not([disabled]), .btn-secondary-left:active:not([disabled]), .btn-secondary-right:active:not([disabled]) {
+    background-color: #5E97D1; }
+  [disabled].btn-secondary-left, [disabled].btn-secondary-right {
+    opacity: 0.3; }
+
+/* left secondary button stylings. extends %btn-secondary and adds all left specific styles */
+.btn-secondary-left {
+  height: 40px;
+  border-radius: 20px 0px 0px 20px;
+  border: none;
+  float: left; }
+
+/* right secondary button stylings. extends %btn-secondary and adds all right specific styles */
+.btn-secondary-right {
+  height: 40px;
+  border-radius: 0px 20px 20px 0px;
+  border: none;
+  float: right; }
+
+/* styling the item count div */
+.item-count {
+  vertical-align: top;
+  text-align: center;
+  width: 95px;
+  height: 38px;
+  /* total height of the container div and buttons are,
+   * the border on top and bottom of the item-count div are each 1px, so
+   * height of the count div must be 38 px to display perfectly inline with side buttons
+   */
+  background-color: white;
+  float: left;
+  line-height: 38px;
+  /* line height same as div height to require text to display at vertical center */
+  border-style: solid none solid none;
+  border-color: #F5F5F5;
+  border-width: 1px; }
+
+/* General body styles. These should not need to be changed
+ * for any reason by the application
+ */
 body {
   background-color: #F5F5F5;
-  margin: 0;
-  padding: 55px 80px 0px 80px; }
-
-h2 {
   font-family: Chivo, sans-serif;
-  font-weight: bold;
-  font-size: 51px;
-  line-height: 44px;
+  margin: 0; }
+
+h1, h2, h3, h4, h5, h6, p {
+  font-weight: normal;
   margin: 0px;
   padding: 0px; }
 
+#main {
+  margin: 20px 18px 0px 18px; }
+  @media only screen and (min-width: 768px) {
+    #main {
+      margin: 43px 50px 0px 50px; } }
+  @media only screen and (min-width: 1280px) {
+    #main {
+      margin: 55px 80px 0px 80px; } }
+
+.header {
+  width: 100%; }
+
+/* Styling the Store page header */
+.store-heading {
+  height: 44px;
+  display: inline-block; }
+  .store-heading h2 {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 44px; }
+    @media only screen and (min-width: 768px) {
+      .store-heading h2 {
+        font-size: 38px; } }
+    @media only screen and (min-width: 1280px) {
+      .store-heading h2 {
+        font-size: 51px; } }
+
+/* Display the cart link button on the right side of the header */
+.cart-container {
+  height: 17px;
+  line-height: 17px; }
+  @media only screen and (min-width: 768px) {
+    .cart-container {
+      float: right;
+      height: 44px;
+      line-height: 44px; } }
+
+/* Styling the hr tag that divides the heading from the store content */
 hr {
   border: 0;
   height: 1px;
   color: #DADADA;
   background-color: #DADADA;
-  margin: 30px 0px; }
+  margin: 21px 0px; }
+  @media only screen and (min-width: 768px) {
+    hr {
+      margin: 25px 0px; } }
+  @media only screen and (min-width: 1280px) {
+    hr {
+      margin: 30px 0px; } }
 
+/* Styling the container div that contains the product listing */
 .product {
   width: 100%;
-  height: 282px;
+  height: 358px;
   background-color: white;
   border-radius: 8px;
-  margin-bottom: 30px; }
+  margin-bottom: 21px;
+  overflow: hidden;
+  /* clip overflow so rounded edges are not covered by child divs */ }
+  @media only screen and (min-width: 768px) {
+    .product {
+      height: 196px;
+      margin-bottom: 25px; } }
+  @media only screen and (min-width: 1280px) {
+    .product {
+      height: 282px;
+      margin-bottom: 30px; } }
+  .product div {
+    display: inline-block;
+    vertical-align: top; }
+
+.product-image {
+  width: 100%;
+  height: 206px;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+  @media only screen and (min-width: 768px) {
+    .product-image {
+      /* NOTE: I did the math and the image of the product takes up about 40% of the
+       * width the product listing box in both desktop and tablet views, so I made the
+       * decision to use a 40% width value instead of a fixed width because I thought
+       * it looked better
+       */
+      width: 40%;
+      height: 100%; } }
+
+/* Styling Displays product information to the side of the product image in desktop/tablet
+ * and displays product information below the image in mobile */
+.product-info {
+  width: 100%;
+  height: 152px; }
+  @media only screen and (min-width: 768px) {
+    .product-info {
+      width: 60%;
+      height: 100%; } }
+
+/* Layout styles applied to information displayed on the left */
+.info-left {
+  float: left;
+  margin: 20px 0px 0px 25px; }
+  @media only screen and (min-width: 768px) {
+    .info-left {
+      margin: 27px 0px 0px 35px; } }
+  @media only screen and (min-width: 1280px) {
+    .info-left {
+      margin: 33px 0px 0px 53px; } }
+
+/* Layout styles applied to information displayed on the left */
+.info-right {
+  float: right;
+  margin: 20px 20px 0px 0px; }
+  @media only screen and (min-width: 768px) {
+    .info-right {
+      margin: 27px 40px 0px 0px; } }
+  @media only screen and (min-width: 1280px) {
+    .info-right {
+      margin: 33px 75px 0px 0px; } }
+
+/* Change product header fontsize/line height at breakpoints as specified in the wireframes */
+.info-heading {
+  font-size: 21px;
+  line-height: 25px; }
+  @media only screen and (min-width: 768px) {
+    .info-heading {
+      font-size: 28px;
+      line-height: 33px; } }
+  @media only screen and (min-width: 1280px) {
+    .info-heading {
+      font-size: 38px;
+      line-height: 46px; } }
+
+/* Change price fontsize/line height at breakpoints as specified in the wireframes */
+.info-price {
+  font-size: 16px;
+  line-height: 25px; }
+  @media only screen and (min-width: 768px) {
+    .info-price {
+      font-size: 21px;
+      line-height: 33px; } }
+  @media only screen and (min-width: 1280px) {
+    .info-price {
+      line-height: 46px; } }
+
+/* Change product "remaining" fontsize/line height and
+ * top/bottom margins at breakpoints as specified in the wireframes */
+.info-remaining {
+  color: #9B9B9B;
+  letter-spacing: 0.86px;
+                       	/* Letter spacing is just on for the tablet
+						 * view in the wireframes. I cant tell if it was
+						 * intentional, but I liked it, so I kept it in all
+						 * the views
+						 */
+  text-transform: uppercase;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  margin: 12px 0px 20px 0px; }
+  @media only screen and (min-width: 768px) {
+    .info-remaining {
+      margin: 10px 0px 45px 0px; } }
+  @media only screen and (min-width: 1280px) {
+    .info-remaining {
+      font-size: 13px;
+      line-height: 15px;
+      margin: 15px 0px 85px 0px; } }
 
 /*# sourceMappingURL=store.css.map */

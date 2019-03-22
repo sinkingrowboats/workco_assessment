@@ -2,12 +2,6 @@
 /* NOTE: I've noticed I've been using Chivo a lot.
  * Consider moving to some super class to avoid repeated font-family declarations
  */
-/* TODO: The desired breakpoint on the Sketch file seems to be 350px,
- * But my screen won't display at a width below 440px, so I made
- * the mobile break point larger so I could visibly see the break
- * and the display changes it causes. 
- * !!! REVERT BEFORE COMMITTING FINAL VERSION !!!
- */
 /* MIXIN: display div with pill style */
 /* MIXIN: give primary button style. This is just pill style
  * but, specifies no border. Mostly just exists for ease of code resuse
@@ -54,7 +48,7 @@ button:focus {
     background-color: #407FC0; }
   .btn-primary[disabled] {
     opacity: 0.3; }
-  @media only screen and (min-width: 450px) {
+  @media only screen and (min-width: 768px) {
     .btn-primary {
       font-size: 14px;
       width: 140px;
@@ -62,9 +56,7 @@ button:focus {
       border-radius: 20px;
       border: none; } }
 
-/* styling the link buttoon style.
- * NOTE: Consider changing the link from an <a> tag to... well anything else
- */
+/* styling the link button style. */
 .btn-link {
   color: #292929;
   font-family: Chivo, sans-serif;
@@ -73,6 +65,8 @@ button:focus {
   /* text only changes color on hover/active when not disabled */ }
   .btn-link:hover:not([disabled]), .btn-link:active:not([disabled]) {
     color: #407FC0; }
+    .btn-link:hover:not([disabled]) svg path, .btn-link:active:not([disabled]) svg path {
+      fill: #5E97D1; }
   .btn-link[disabled] {
     opacity: 0.3; }
 
@@ -107,6 +101,7 @@ Whoops didn't notice I left this old code block in.
 
 /* placeholder selector for styles shared by both left and right secondary buttons */
 .btn-secondary-left, .btn-secondary-right {
+  vertical-align: top;
   background-color: #F5F5F5;
   width: 95px; }
   .btn-secondary-left:hover:not([disabled]), .btn-secondary-right:hover:not([disabled]), .btn-secondary-left:active:not([disabled]), .btn-secondary-right:active:not([disabled]) {
@@ -130,6 +125,7 @@ Whoops didn't notice I left this old code block in.
 
 /* styling the item count div */
 .item-count {
+  vertical-align: top;
   text-align: center;
   width: 95px;
   height: 38px;

@@ -1,32 +1,224 @@
-@import "../variables.scss";
+@import "../variables.scss"; 
+@import "../mixins.scss";
+@import "../buttons/buttons.scss";
 
+/* General body styles. These should not need to be changed
+ * for any reason by the application
+ */
 body {
 	background-color: $color-background;
+	font-family: $font-chivo;
 	margin: 0;
-	padding: 55px 80px 0px 80px;
 }
 
-h2 {
-	font-family: $font-chivo;
-	font-weight: bold;
-	font-size: 51px;
-	line-height: 44px;
+h1, h2, h3, h4, h5, h6, p{
+	font-weight: normal;
 	margin: 0px;
 	padding: 0px;
 }
 
+#main {
+	margin: 20px 18px 0px 18px;
+
+	@media only screen and (min-width: $break-mobile) {
+		margin: 43px 50px 0px 50px;
+	}
+
+	@media only screen and (min-width: $break-tablet) {
+		margin: 55px 80px 0px 80px;
+	}
+}
+
+.header {
+	width: 100%;
+}
+
+/* Styling the Store page header */
+.store-heading {
+	height: 44px;
+	display: inline-block;
+
+	h2 {
+		font-weight: bold;
+		font-size: 28px;
+		line-height: 44px;
+
+		@media only screen and (min-width: $break-mobile) {
+			font-size: 38px;
+		}
+
+		@media only screen and (min-width: $break-tablet) {
+			font-size: 51px;
+		}
+	}
+}
+
+/* Display the cart link button on the right side of the header */
+.cart-container {
+	height: 17px;
+	line-height: 17px;
+
+	@media only screen and (min-width: $break-mobile) {
+		float: right;
+		height: 44px;
+		line-height: 44px
+	}
+}
+
+/* Styling the hr tag that divides the heading from the store content */
 hr {
 	border: 0;
 	height: 1px;
 	color: #DADADA;
 	background-color: #DADADA;
-	margin: 30px 0px;
+	margin: $margin-mobile 0px;
+
+	@media only screen and (min-width: $break-mobile) {
+		margin: $margin-tablet 0px;
+	}
+
+	@media only screen and (min-width: $break-tablet) {
+		margin: $margin-desktop 0px;
+	}
 }
 
+/* Styling the container div that contains the product listing */
 .product {
 	width: 100%;
-	height: 282px;
+	height: $product-height;
 	background-color: white;
 	border-radius: 8px;
-	margin-bottom: 30px;
+	margin-bottom: $margin-mobile;
+	overflow: hidden; /* clip overflow so rounded edges are not covered by child divs */
+
+	@media only screen and (min-width: $break-mobile) {
+		height: 196px;
+		margin-bottom: $margin-tablet;
+	}
+
+	@media only screen and (min-width: $break-tablet) {
+		height: 282px;
+		margin-bottom: $margin-desktop;
+	}
+
+	div {
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+
+.product-image {
+	width: 100%;
+	height: $image-height-mobile;
+	background-color: black;
+	@include backImageStyling();
+
+	@media only screen and (min-width: $break-mobile) {
+		/* NOTE: I did the math and the image of the product takes up about 40% of the
+		 * width the product listing box in both desktop and tablet views, so I made the
+		 * decision to use a 40% width value instead of a fixed width because I thought
+		 * it looked better
+		 */
+		width: 40%;
+		height: 100%;
+	}
+}
+
+/* Styling Displays product information to the side of the product image in desktop/tablet
+ * and displays product information below the image in mobile */
+.product-info {
+	width: 100%;
+
+	height: ($product-height - $image-height-mobile);
+
+	@media only screen and (min-width: $break-mobile) {
+		width: 60%;
+		height: 100%;
+	}
+}
+
+/* Layout styles applied to information displayed on the left */
+.info-left {
+	float: left;
+	margin: 20px 0px 0px 25px;
+
+	@media only screen and (min-width: $break-mobile) {
+		margin: 27px 0px 0px 35px;
+	}
+
+	@media only screen and (min-width: $break-tablet) {
+		margin: 33px 0px 0px 53px;
+	}
+	
+}
+
+/* Layout styles applied to information displayed on the left */
+.info-right {
+	float: right;
+	margin: 20px 20px 0px 0px;
+
+	@media only screen and (min-width: $break-mobile) {
+		margin: 27px 40px 0px 0px;
+	}
+
+	@media only screen and (min-width: $break-tablet) {
+		margin: 33px 75px 0px 0px;
+	}
+}
+
+/* Change product header fontsize/line height at breakpoints as specified in the wireframes */
+.info-heading {
+	font-size: 21px;
+	line-height: 25px;
+
+	@media only screen and (min-width: $break-mobile) {
+		font-size: 28px;
+		line-height: 33px;
+	}
+
+	@media only screen and (min-width: $break-tablet) {
+		font-size: 38px;
+		line-height: 46px;
+	}
+}
+
+/* Change price fontsize/line height at breakpoints as specified in the wireframes */
+.info-price {
+	font-size: 16px;
+	line-height: 25px;
+
+	@media only screen and (min-width: $break-mobile) {
+		font-size: 21px;
+		line-height: 33px;
+	}
+
+	@media only screen and (min-width: $break-tablet) {
+		line-height: 46px;
+	}
+}
+
+/* Change product "remaining" fontsize/line height and
+ * top/bottom margins at breakpoints as specified in the wireframes */
+.info-remaining {
+	color: $app-remaininggrey;
+	letter-spacing: 0.86px;	/* Letter spacing is just on for the tablet
+							 * view in the wireframes. I cant tell if it was
+							 * intentional, but I liked it, so I kept it in all
+							 * the views
+							 */
+	text-transform: uppercase;
+	font-family: $font-helvetica-neue;
+	font-size: 12px;
+	line-height: 14px;
+	margin: 12px 0px 20px 0px;
+
+	@media only screen and (min-width: $break-mobile) {
+		margin: 10px 0px 45px 0px;
+	}
+
+	@media only screen and (min-width: $break-tablet) {
+		font-size: 13px;
+		line-height: 15px;
+		margin: 15px 0px 85px 0px;
+	}
 }
