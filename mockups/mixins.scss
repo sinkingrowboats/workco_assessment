@@ -22,7 +22,6 @@
     border-radius: 0px ($height / 2) ($height / 2) 0px;
     border: none;
 }
-
 @mixin btnSecondaryLeft($height) {
     height: $height;
     border-radius: ($height / 2) 0px 0px ($height / 2);

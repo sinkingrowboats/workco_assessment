@@ -1,0 +1,551 @@
+/* Color Variables */
+/* Font Variables */
+/* Opacity Variables */
+/* Layout Variables */
+/* MIXIN: display div with pill style */
+/* MIXIN: give primary button style. This is just pill style
+ * but, specifies no border. Mostly just exists for ease of code resuse
+ */
+/* MIXIN: Apply pill button stle to only left or right sides as specified for the 
+ * secondary button styles in the sketch file
+ */
+/* MIXIN: Lower the opacity to indicate an element is disabled*/
+/* MIXIN: Change background-color on hover, but only when element is not disabled */
+/* MIXIN: Standard Styling for div background images. Exists seperately from
+ * the backImage mixin so background image url can be specified in the html
+ * properties
+ */
+/* MIXIN: Standard Styling for div background images. Gives the div the background-image
+ * specified by the path '$image'
+ */
+/* MIXIN: Standard thin horizontal rule stylings. Gives the rule the color specified by
+ * $line-color
+ */
+/* General body styles. These should not need to be changed
+ * for any reason by the application
+ */
+body {
+  background-color: #F5F5F5;
+  font-family: Chivo, sans-serif;
+  font-weight: normal;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll; }
+
+h1, h2, h3, h4, h5, h6, p {
+  font-weight: normal;
+  margin: 0px;
+  padding: 0px; }
+
+/* remove focus boxes around all buttons */
+button {
+  cursor: pointer;
+  font-family: Chivo, sans-serif; }
+  button:focus {
+    outline: 0; }
+
+/* buttons.scss: Styling for the various buttons */
+/* NOTE: I've noticed I've been using Chivo a lot.
+ * Consider moving to some super class to avoid repeated font-family declarations
+ */
+/* styling the primary button style */
+.btn-primary {
+  background-color: #5E97D1;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  font-family: Chivo, sans-serif;
+  width: 120px;
+  margin: 0;
+  padding: 0;
+  height: 30px;
+  border-radius: 15px;
+  border: none; }
+  .btn-primary:hover:not([disabled]), .btn-primary:active:not([disabled]) {
+    background-color: #407FC0; }
+  .btn-primary[disabled] {
+    opacity: 0.3; }
+  @media only screen and (min-width: 768px) {
+    .btn-primary {
+      font-size: 14px;
+      width: 140px;
+      height: 40px;
+      border-radius: 20px;
+      border: none; } }
+
+/* styling the link button style. */
+.btn-link {
+  color: #292929;
+  font-family: Chivo, sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  /* text only changes color on hover/active when not disabled */ }
+  .btn-link:hover:not([disabled]), .btn-link:active:not([disabled]) {
+    color: #407FC0; }
+    .btn-link:hover:not([disabled]) svg path, .btn-link:active:not([disabled]) svg path {
+      fill: #5E97D1; }
+  .btn-link[disabled] {
+    opacity: 0.3; }
+
+/* Styling the Add/Subtract secondary buttons */
+/* The styling somewhat relies on the container div that contains the buttons
+ */
+/* Styling the container div for the Add/subtract buttons. */
+.add-subtract {
+  width: 100%; }
+
+/* placeholder selector for styles shared by both left and right secondary buttons */
+.btn-secondary-left, .btn-secondary-right {
+  text-align: center;
+  vertical-align: top;
+  background-color: #F5F5F5;
+  width: 33%;
+  display: inline-block; }
+  .btn-secondary-left:hover:not([disabled]), .btn-secondary-right:hover:not([disabled]), .btn-secondary-left:active:not([disabled]), .btn-secondary-right:active:not([disabled]) {
+    background-color: #5E97D1; }
+  [disabled].btn-secondary-left, [disabled].btn-secondary-right {
+    opacity: 0.3; }
+  .btn-secondary-left svg, .btn-secondary-right svg {
+    vertical-align: middle; }
+  .btn-secondary-left svg, .btn-secondary-right svg {
+    fill: white; }
+  .btn-secondary-left:hover:not([disabled]) svg path, .btn-secondary-right:hover:not([disabled]) svg path, .btn-secondary-left:active:not([disabled]) svg path, .btn-secondary-right:active:not([disabled]) svg path {
+    fill: white;
+    stroke: white; }
+
+/* left secondary button stylings. extends %btn-secondary and adds all left specific styles */
+.btn-secondary-left {
+  height: 40px;
+  border-radius: 20px 0px 0px 20px;
+  border: none; }
+  .btn-secondary-left g {
+    fill: white; }
+
+/* right secondary button stylings. extends %btn-secondary and adds all right specific styles */
+.btn-secondary-right {
+  height: 40px;
+  border-radius: 0px 20px 20px 0px;
+  border: none; }
+
+/* styling the item count div */
+.item-count {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  width: 34%;
+  height: 38px;
+  /* total height of the container div and buttons are,
+   * the border on top and bottom of the item-count div are each 1px, so
+   * height of the count div must be 38 px to display perfectly inline with side buttons
+   */
+  background-color: white;
+  line-height: 38px;
+  /* line height same as div height to require text to display at vertical center */
+  border-style: solid none solid none;
+  border-color: #F5F5F5;
+  border-width: 1px; }
+
+#main {
+  margin: 20px 18px 0px 18px; }
+  @media only screen and (min-width: 768px) {
+    #main {
+      margin: 43px 50px 0px 50px; } }
+  @media only screen and (min-width: 1280px) {
+    #main {
+      margin: 55px 80px 0px 80px; } }
+
+.header {
+  width: 100%; }
+
+/* Styling the Store page header */
+.store-heading {
+  height: 44px;
+  display: inline-block; }
+  .store-heading h2 {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 44px; }
+    @media only screen and (min-width: 768px) {
+      .store-heading h2 {
+        font-size: 38px; } }
+    @media only screen and (min-width: 1280px) {
+      .store-heading h2 {
+        font-size: 51px; } }
+
+/* Display the cart link button on the right side of the header */
+.cart-link-container {
+  height: 17px;
+  line-height: 17px; }
+  @media only screen and (min-width: 768px) {
+    .cart-link-container {
+      float: right;
+      height: 44px;
+      line-height: 44px; } }
+
+/* Styling the hr tag that divides the heading from the store content */
+.content-divider {
+  border: 0;
+  height: 1px;
+  color: #D8D8D8;
+  background-color: #D8D8D8;
+  margin: 21px 0px; }
+  @media only screen and (min-width: 768px) {
+    .content-divider {
+      margin: 25px 0px; } }
+  @media only screen and (min-width: 1280px) {
+    .content-divider {
+      margin: 30px 0px; } }
+
+/* Styling the container div that contains the product listing */
+.product {
+  width: 100%;
+  height: 358px;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 21px;
+  overflow: hidden;
+  /* clip overflow so rounded edges are not covered by child divs */ }
+  @media only screen and (min-width: 768px) {
+    .product {
+      height: 196px;
+      margin-bottom: 25px; } }
+  @media only screen and (min-width: 1280px) {
+    .product {
+      height: 282px;
+      margin-bottom: 30px; } }
+  .product div {
+    display: inline-block;
+    vertical-align: top; }
+
+.product-image {
+  width: 100%;
+  height: 206px;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+  @media only screen and (min-width: 768px) {
+    .product-image {
+      /* NOTE: I did the math and the image of the product takes up about 40% of the
+       * width the product listing box in both desktop and tablet views, so I made the
+       * decision to use a 40% width value instead of a fixed width because I thought
+       * it looked better
+       */
+      width: 40%;
+      height: 100%; } }
+
+/* Styling Displays product information to the side of the product image in desktop/tablet
+ * and displays product information below the image in mobile */
+.product-info {
+  width: 100%;
+  height: 152px; }
+  @media only screen and (min-width: 768px) {
+    .product-info {
+      width: 60%;
+      height: 100%; } }
+
+/* Layout styles applied to information displayed on the left */
+.info-left {
+  float: left;
+  margin: 20px 0px 0px 25px; }
+  @media only screen and (min-width: 768px) {
+    .info-left {
+      margin: 27px 0px 0px 35px; } }
+  @media only screen and (min-width: 1280px) {
+    .info-left {
+      margin: 33px 0px 0px 53px; } }
+
+/* Layout styles applied to information displayed on the left */
+.info-right {
+  float: right;
+  margin: 20px 20px 0px 0px; }
+  @media only screen and (min-width: 768px) {
+    .info-right {
+      margin: 27px 40px 0px 0px; } }
+  @media only screen and (min-width: 1280px) {
+    .info-right {
+      margin: 33px 75px 0px 0px; } }
+
+/* Change product header fontsize/line height at breakpoints as specified in the wireframes */
+.info-heading {
+  font-size: 21px;
+  line-height: 25px; }
+  @media only screen and (min-width: 768px) {
+    .info-heading {
+      font-size: 28px;
+      line-height: 33px; } }
+  @media only screen and (min-width: 1280px) {
+    .info-heading {
+      font-size: 38px;
+      line-height: 46px; } }
+
+/* Change price fontsize/line height at breakpoints as specified in the wireframes */
+.info-price {
+  font-size: 16px;
+  line-height: 25px; }
+  @media only screen and (min-width: 768px) {
+    .info-price {
+      font-size: 21px;
+      line-height: 33px; } }
+  @media only screen and (min-width: 1280px) {
+    .info-price {
+      line-height: 46px; } }
+
+/* Change product "remaining" fontsize/line height and
+ * top/bottom margins at breakpoints as specified in the wireframes */
+.info-remaining {
+  color: #9B9B9B;
+  letter-spacing: 0.86px;
+                       	/* Letter spacing is just on for the tablet
+						 * view in the wireframes. I cant tell if it was
+						 * intentional, but I liked it, so I kept it in all
+						 * the views
+						 */
+  text-transform: uppercase;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  margin: 12px 0px 20px 0px; }
+  @media only screen and (min-width: 768px) {
+    .info-remaining {
+      margin: 10px 0px 45px 0px; } }
+  @media only screen and (min-width: 1280px) {
+    .info-remaining {
+      font-size: 13px;
+      line-height: 15px;
+      margin: 15px 0px 85px 0px; } }
+
+#cart-overlay {
+  display: none;
+  background-color: rgba(236, 240, 245, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  overflow: hidden; }
+  @media only screen and (min-width: 1280px) {
+    #cart-overlay {
+      overflow-y: scroll; } }
+
+.cart-root {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  box-sizing: border-box;
+  padding: 18px 0 45px 0; }
+  @media only screen and (min-width: 768px) {
+    .cart-root {
+      padding: 25px 0 50px 0; } }
+  @media only screen and (min-width: 1280px) {
+    .cart-root {
+      width: 780px;
+      height: auto;
+      margin: 175px auto;
+      padding: 30px 0 0 0;
+      border-radius: 14px; } }
+
+.cart-main {
+  margin: 0 17px;
+  position: relative; }
+  @media only screen and (min-width: 768px) {
+    .cart-main {
+      margin: 0 50px; } }
+  @media only screen and (min-width: 1280px) {
+    .cart-main {
+      margin: 0 80px;
+      height: auto;
+      min-height: 608px; } }
+  .cart-main hr {
+    border: 0;
+    height: 1px;
+    color: #D8D8D8;
+    background-color: #D8D8D8;
+    margin: 20px 0; }
+    @media only screen and (min-width: 768px) {
+      .cart-main hr {
+        margin: 25px 0; } }
+    @media only screen and (min-width: 1280px) {
+      .cart-main hr {
+        margin: 30px 0; } }
+  .cart-main .add-subtract {
+    margin: 20px 0; }
+    @media only screen and (min-width: 768px) {
+      .cart-main .add-subtract {
+        margin: 25px 0; } }
+    @media only screen and (min-width: 1280px) {
+      .cart-main .add-subtract {
+        margin: 30px 0; } }
+
+.close-cart {
+  height: 20px;
+  margin-bottom: 10px; }
+  .close-cart img {
+    cursor: pointer;
+    height: 100%;
+    float: right;
+    margin-right: 18px; }
+  @media only screen and (min-width: 768px) {
+    .close-cart {
+      height: 25px; }
+      .close-cart img {
+        margin-right: 25px; } }
+  @media only screen and (min-width: 1280px) {
+    .close-cart {
+      height: 30px; }
+      .close-cart img {
+        margin-right: 30px; } }
+
+.checkout-btn {
+  color: white;
+  background-color: #5E97D1;
+  text-transform: uppercase;
+  border: none;
+  font-size: 14px;
+  line-height: 17px;
+  width: 100%;
+  height: 45px;
+  bottom: 0;
+  left: 0;
+  position: fixed; }
+  .checkout-btn:hover:not([disabled]), .checkout-btn:active:not([disabled]) {
+    background-color: #407FC0; }
+  .checkout-btn[disabled] {
+    opacity: 0.3; }
+  @media only screen and (min-width: 768px) {
+    .checkout-btn {
+      font-size: 16px;
+      height: 50px; } }
+  @media only screen and (min-width: 1280px) {
+    .checkout-btn {
+      position: relative; } }
+
+.update-btn {
+  border: 1px solid #D8D8D8;
+  border-radius: 2px;
+  font-size: 14px;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 50px; }
+  @media only screen and (min-width: 768px) {
+    .update-btn {
+      height: 45px;
+      font-size: 16px; } }
+  .update-btn[disabled] {
+    opacity: 0.3; }
+  .update-btn:hover:not([disabled]), .update-btn:active:not([disabled]) {
+    border-color: #9B9B9B; }
+
+.cart-heading {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 32px; }
+  @media only screen and (min-width: 768px) {
+    .cart-heading {
+      font-size: 32px; } }
+  @media only screen and (min-width: 1280px) {
+    .cart-heading {
+      font-size: 38px; } }
+
+.receipt-item {
+  height: 18px;
+  margin: 20px 0; }
+  @media only screen and (min-width: 768px) {
+    .receipt-item {
+      margin: 25px 0; } }
+  @media only screen and (min-width: 1280px) {
+    .receipt-item {
+      margin: 30px 0; } }
+  .receipt-item span {
+    font-size: 14px; }
+    @media only screen and (min-width: 768px) {
+      .receipt-item span {
+        font-size: 16px; } }
+
+.receipt-item-name {
+  float: left; }
+
+.receipt-item-price {
+  float: right; }
+
+.cart-product {
+  margin: 20px 0;
+  height: 78px;
+  font-size: 14px; }
+  @media only screen and (min-width: 768px) {
+    .cart-product {
+      margin: 25px 0;
+      height: 150px;
+      font-size: 16px; } }
+  @media only screen and (min-width: 1280px) {
+    .cart-product {
+      margin: 30px 0;
+      font-size: 18px; } }
+  .cart-product div {
+    position: relative;
+    height: 100%;
+    vertical-align: top;
+    display: inline-block; }
+  .cart-product h4 {
+    font-size: 16px; }
+    @media only screen and (min-width: 768px) {
+      .cart-product h4 {
+        font-size: 20px; } }
+    @media only screen and (min-width: 1280px) {
+      .cart-product h4 {
+        font-size: 28px; } }
+  .cart-product p {
+    margin: 3px 0; }
+    @media only screen and (min-width: 768px) {
+      .cart-product p {
+        margin: 5px 0; } }
+    @media only screen and (min-width: 1280px) {
+      .cart-product p {
+        margin: 7px 0; } }
+  .cart-product a {
+    margin: 3px 0;
+    font-family: "Helvetica Neue", sans-serif;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #CC1D39;
+    text-decoration: none; }
+
+.cart-product-image {
+  width: 30%;
+  min-width: 107px;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+
+.cart-product-info {
+  margin-left: 15px; }
+
+.cart-empty-warning {
+  width: 100%;
+  height: 156px;
+  display: inline;
+  vertical-align: middle;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 21px;
+  color: #9B9B9B;
+  text-align: center;
+  top: 50vh;
+  left: 0;
+  position: absolute;
+  transform: translateY(-50%); }
+  @media only screen and (min-width: 1280px) {
+    .cart-empty-warning {
+      top: 339px; } }
+  .cart-empty-warning div {
+    width: 342px;
+    margin: 0 auto 30px auto; }
+
+/*# sourceMappingURL=index.css.map */

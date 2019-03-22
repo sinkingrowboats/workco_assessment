@@ -1,3 +1,7 @@
+/* Color Variables */
+/* Font Variables */
+/* Opacity Variables */
+/* Layout Variables */
 /* MIXIN: display div with pill style */
 /* MIXIN: give primary button style. This is just pill style
  * but, specifies no border. Mostly just exists for ease of code resuse
@@ -7,6 +11,16 @@
  */
 /* MIXIN: Lower the opacity to indicate an element is disabled*/
 /* MIXIN: Change background-color on hover, but only when element is not disabled */
+/* MIXIN: Standard Styling for div background images. Exists seperately from
+ * the backImage mixin so background image url can be specified in the html
+ * properties
+ */
+/* MIXIN: Standard Styling for div background images. Gives the div the background-image
+ * specified by the path '$image'
+ */
+/* MIXIN: Standard thin horizontal rule stylings. Gives the rule the color specified by
+ * $line-color
+ */
 /* General body styles. These should not need to be changed
  * for any reason by the application
  */
@@ -32,12 +46,6 @@ button {
 /* NOTE: I've noticed I've been using Chivo a lot.
  * Consider moving to some super class to avoid repeated font-family declarations
  */
-/* ===================== Page display Styles. ===================== */
-/* These are irrelevant to the actual button styling CSS*/
-section {
-  margin: 50px 20px; }
-
-/* ================================================================ */
 /* styling the primary button style */
 .btn-primary {
   background-color: #5E97D1;
@@ -70,6 +78,8 @@ section {
   font-family: Chivo, sans-serif;
   font-size: 14px;
   text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
   /* text only changes color on hover/active when not disabled */ }
   .btn-link:hover:not([disabled]), .btn-link:active:not([disabled]) {
     color: #407FC0; }
@@ -83,44 +93,53 @@ section {
  */
 /* Styling the container div for the Add/subtract buttons. */
 .add-subtract {
-  width: 285px; }
+  width: 100%; }
 
 /* placeholder selector for styles shared by both left and right secondary buttons */
 .btn-secondary-left, .btn-secondary-right {
+  text-align: center;
   vertical-align: top;
   background-color: #F5F5F5;
-  width: 95px; }
+  width: 33%;
+  display: inline-block; }
   .btn-secondary-left:hover:not([disabled]), .btn-secondary-right:hover:not([disabled]), .btn-secondary-left:active:not([disabled]), .btn-secondary-right:active:not([disabled]) {
     background-color: #5E97D1; }
   [disabled].btn-secondary-left, [disabled].btn-secondary-right {
     opacity: 0.3; }
+  .btn-secondary-left svg, .btn-secondary-right svg {
+    vertical-align: middle; }
+  .btn-secondary-left svg, .btn-secondary-right svg {
+    fill: white; }
+  .btn-secondary-left:hover:not([disabled]) svg path, .btn-secondary-right:hover:not([disabled]) svg path, .btn-secondary-left:active:not([disabled]) svg path, .btn-secondary-right:active:not([disabled]) svg path {
+    fill: white;
+    stroke: white; }
 
 /* left secondary button stylings. extends %btn-secondary and adds all left specific styles */
 .btn-secondary-left {
   height: 40px;
   border-radius: 20px 0px 0px 20px;
-  border: none;
-  float: left; }
+  border: none; }
+  .btn-secondary-left g {
+    fill: white; }
 
 /* right secondary button stylings. extends %btn-secondary and adds all right specific styles */
 .btn-secondary-right {
   height: 40px;
   border-radius: 0px 20px 20px 0px;
-  border: none;
-  float: right; }
+  border: none; }
 
 /* styling the item count div */
 .item-count {
+  display: inline-block;
   vertical-align: top;
   text-align: center;
-  width: 95px;
+  width: 34%;
   height: 38px;
   /* total height of the container div and buttons are,
    * the border on top and bottom of the item-count div are each 1px, so
    * height of the count div must be 38 px to display perfectly inline with side buttons
    */
   background-color: white;
-  float: left;
   line-height: 38px;
   /* line height same as div height to require text to display at vertical center */
   border-style: solid none solid none;

@@ -1,21 +1,23 @@
-@import "../variables.scss"; 
-@import "../mixins.scss";
-@import "../base.scss";
-@import "../buttons/buttons.scss";
+// @import "../variables.scss"; 
+// @import "../mixins.scss";
+// @import "../base.scss";
+// @import "../buttons/buttons.scss";
 
 $cart-main-height: 678px - ($margin-cart-top-desktop + 40px);
 
-#main {
+// #main {
 
-	/* These styles need to be added to the main div when the cart overlay is displayed
-	 * so the layer beneath does not scroll if the page overflows the height of the
-	 * viewport, which it's basically guaranteed to do.
-	 */
-	overflow: hidden;
-	position: fixed;
-}
+// 	 !!!!! These styles need to be added to the main div when the cart overlay is displayed
+// 	 so the layer beneath does not scroll if the page overflows the height of the
+// 	 viewport, which it's basically guaranteed to do. !!!!!
+	 
+// 	overflow: hidden;
+// 	position: fixed;
+// }
 
 #cart-overlay {
+	display: none;
+
 	background-color: $app-greyoverlay;
 
 	position: fixed;

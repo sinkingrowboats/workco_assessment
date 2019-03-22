@@ -3,20 +3,9 @@
  * Consider moving to some super class to avoid repeated font-family declarations
  */
 
-//@import "../variables.scss";
-//@import "../mixins.scss";
-//@import "../base.scss";
-
-/* ===================== Page display Styles. ===================== */
-/* These are irrelevant to the actual button styling CSS*/
-section {
-    margin: 50px 20px;
-}
-
-body {
-    background-color: white;
-}
-/* ================================================================ */
+// @import "../variables.scss";
+// @import "../mixins.scss";
+// @import "../base.scss";
 
 /* styling the primary button style */
 .btn-primary {
@@ -50,6 +39,8 @@ body {
     font-family: $font-chivo;
     font-size: 14px;
     text-decoration: none;
+    background-color: rgba(0,0,0,0);
+    border: none;
 
     /* text only changes color on hover/active when not disabled */
     &:hover, &:active {

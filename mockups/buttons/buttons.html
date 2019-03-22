@@ -6,15 +6,27 @@
         <link rel="stylesheet" href="../fonts.css">
         <link rel="stylesheet" href="buttons.css">
         <title>Button Samples</title>
+        <style>
+            section {
+                margin: 35px 15px;
+            }
+
+            section h3 {
+                margin: 15px 0;
+                font-weight: bold;
+            }
+        </style>
     </head>
-    <body>
+    <body style="background-color: white;">
         <div id="root">
             <section>
+                <h3>Primary Button Styles</h3>
                 <button class="btn-primary">Add to cart</button>
                 <button class="btn-primary" disabled>Add to cart</button>
             </section>
             <section>
-                <a class="btn-link" href="#">
+                <h3>Text Link Button Styles</h3>
+                <button class="btn-link">
                     <svg class="cart-icon" width="17px" height="14px" viewBox="0 0 17 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
                         <title>Shape</title>
@@ -28,8 +40,8 @@
                         </g>
                     </svg>
                     Your cart is empty
-                </a>
-                <a class="btn-link" href="#" disabled>
+                </button>
+                <button class="btn-link" disabled>
                     <svg class="cart-icon" width="17px" height="14px" viewBox="0 0 17 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
                         <title>Shape</title>
@@ -43,9 +55,10 @@
                         </g>
                     </svg>
                     Your cart is empty
-                </a>
+                </button>
             </section>
             <section>
+                <h3>Secondary Button Styles</h3>
                 <div class="add-subtract">
                     <button class="btn-secondary-left">
                         <svg width="16px" height="2px" viewBox="0 0 16 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -62,7 +75,7 @@
                         </svg>
                     </button><!--
                  --><div class="item-count">110</div><!--
-                 --><button class="btn-secondary-right">
+                 --><button class="btn-secondary-right" disabled>
                         <svg width="14px" height="13px" viewBox="0 0 14 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
                             <title>Combined Shape</title>
